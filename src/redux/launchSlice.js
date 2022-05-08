@@ -5,10 +5,14 @@ const launchSlice = createSlice({
     initialState: [],
     reducers: {
         loadData(state, action) {
-            state.push(action.payload);
+            if (state.indexOf(action.payload) === -1) {
+                state.push(action.payload)
+            }
         },
         searchByRocket(state, action) {
-            state.push(action.payload);
+            if (state.indexOf(action.payload) === -1) {
+                state.push(action.payload);
+            }
         }
     }
 });
